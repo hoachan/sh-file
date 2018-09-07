@@ -15,3 +15,9 @@ yum update
 
 sudo yum install mysql-server
 sudo systemctl start mysqld
+
+chkconfig --add mysqld
+chkconfig --levels 235 mysqld on
+
+chkconfig --add redis
+chkconfig --levels 235 redis on
