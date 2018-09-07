@@ -16,6 +16,7 @@ yum update
 sudo yum install mysql-server
 sudo systemctl start mysqld
 
+#root --- root
 chkconfig --add mysqld
 chkconfig --levels 235 mysqld on
 
