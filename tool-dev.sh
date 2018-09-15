@@ -37,7 +37,7 @@ yum install net-tools
 yum -y install git
 
 #Install node
-yum install -y nodejs
+#yum install -y nodejs
 
 # Install composer
 cd ~
