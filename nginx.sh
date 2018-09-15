@@ -27,7 +27,7 @@ fi
 mkdir -p /home/hoachan/public_html/records
 
 # Clear services
-yum -y remove mysql* php* httpd* nginx
+yum -y remove php* httpd* nginx
 yum clean all
 yum -y update
 yum -y upgrade
@@ -170,24 +170,16 @@ rm -rf /etc/nginx/conf.d/*
 
 
 #setting server name
-for server_name in dev1.hoachan dev2.hoachan
+for server_name in records.8ppy.life
 do
 mkdir -p /home/logs/$server_name
 chmod 777 /home/logs/$server_name
 
-mkdir -p /home/happy_life/public_html/records
-mkdir -p /home/happy_life/public_html/trends
-mkdir -p /home/happy_life/public_html_dev/records
-mkdir -p /home/happy_life/public_html_dev/trends
+mkdir -p /home/hoachan/public_html/records
+mkdir -p /home/hoachan/public_html/trends
 
 case "$server_name" in
-   "records.8ppy.life") root_nginx="/home/happy_life/public_html/records"
-   ;;
-   "trends.8ppy.life") root_nginx="/home/happy_life/public_html/trends"
-   ;;
-   "dev.records.8ppy.life") root_nginx="/home/happy_life/public_html_dev/records"
-   ;;
-   "dev.trends.8ppy.life") root_nginx="/home/happy_life/public_html_dev/trends"
+   "records.8ppy.life") root_nginx="/home/hoachan/public_html/records"
    ;;
 esac
 

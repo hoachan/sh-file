@@ -6,7 +6,7 @@
 
 #Instal phpmyadmin
 phpmyadmin_version="4.8.0.1"
-phpmyadmin_server_name="pma.hoachan"
+phpmyadmin_server_name="pma.vagrant.site"
 admin_password=admin
 
 # Create directory
@@ -24,6 +24,8 @@ mv -f phpMyAdmin-$phpmyadmin_version-english/* .
 rm -rf phpMyAdmin-$phpmyadmin_version-english*
 
 #Create folder logs
+mkdir /home/logs/$phpmyadmin_server_name
+touch /home/logs/$phpmyadmin_server_name/access.log
 
 cat > "/etc/nginx/conf.d/$phpmyadmin_server_name.conf" <<END
 server {
@@ -38,8 +40,8 @@ server {
 	index index.php index.html index.htm;
     	server_name $phpmyadmin_server_name;
 
-    	auth_basic "Restricted";
-	auth_basic_user_file /home/hoachan/.htpasswd;
+    	#auth_basic "Restricted";
+	#auth_basic_user_file /home/hoachan/.htpasswd;
 
 	location / {
 		autoindex on;
